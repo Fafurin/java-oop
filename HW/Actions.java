@@ -1,4 +1,4 @@
-package Lesson1;
+package HW;
 
 public interface Actions {
 
