@@ -1,8 +1,8 @@
 package Lesson1;
 
-public class Spearman extends Character {
+public class Spearman extends Hero {
 
     public Spearman() {
-        super(4, 5, 0, new int[]{1, 3}, 10, 4, false, false, "Spearman");
+        super("Spearman", 4, 5, 0, new int[]{1, 3}, 10, 4, false, false);
     }
 }

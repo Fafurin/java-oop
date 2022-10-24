@@ -2,7 +2,7 @@ package Lesson1;
 
 import java.util.Arrays;
 
-public abstract class Character {
+public abstract class Hero implements Actions {
     protected int attack;
     protected int protection;
     protected int arrows;
@@ -24,7 +24,8 @@ public abstract class Character {
         return arrows;
     }
 
-    public Character(
+    public Hero(
+        String name,
         int attack,
         int protection,
         int arrows,
@@ -32,9 +33,9 @@ public abstract class Character {
         float health,
         int speed,
         boolean delivery,
-        boolean magic,
-        String name
+        boolean magic
     ) {
+        this.name = name;
         this.attack = attack;
         this.protection = protection;
         this.arrows = arrows;
@@ -43,7 +44,6 @@ public abstract class Character {
         this.speed = speed;
         this.delivery = delivery;
         this.magic = magic;
-        this.name = name;
     }
 
     public void print() {
@@ -58,4 +58,9 @@ public abstract class Character {
             ". Delivery: " + delivery +
             ". Magic: " + magic);
     }
+
+    public String getName() {
+        return name;
+    }
+
 }

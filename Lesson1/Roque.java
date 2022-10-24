@@ -1,9 +1,8 @@
 package Lesson1;
 
-public class Roque extends Character {
+public class Roque extends Hero {
 
     protected Roque() {
-        super(8, 3, 0, new int[]{2, 4}, 10, 6, false, false, "Roque");
+        super("Roque", 8, 3, 0, new int[]{2, 4}, 10, 6, false, false);
     }
-
 }
