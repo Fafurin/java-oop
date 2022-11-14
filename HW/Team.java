@@ -6,40 +6,36 @@ import java.util.Random;
 
 public class Team {
 
-    private static List<Hero> getTeam(int size) {
-        List<Hero> party = new ArrayList<>();
+    public static void getTeam(String name, List<Hero> allies, List<Hero> enemies, int x) {
+        List<Hero> team = new ArrayList<>();
         Random rnd = new Random();
-        for (int i = 0; i < size; i++) {
+        for (int i = 0; i < 10; i++) {
             switch (rnd.nextInt(7)) {
                 case 0:
-                    party.add(new Peasant());
+                    team.add(new Peasant(x, i));
                     break;
                 case 1:
-                    party.add(new Crossbowman());
+                    team.add(new Crossbowman(x, i));
                     break;
                 case 2:
-                    party.add(new Roque());
+                    team.add(new Roque(x, i));
                     break;
                 case 3:
-                    party.add(new Sniper());
+                    team.add(new Sniper(x, i));
                     break;
                 case 4:
-                    party.add(new Monk());
+                    team.add(new Monk(x, i));
                     break;
                 case 5:
-                    party.add(new Spearman());
+                    team.add(new Spearman(x, i));
                     break;
                 default:
-                    party.add(new Wizard());
+                    team.add(new Wizard(allies, x, i));
                     break;
             }
         }
-        return party;
-    }
-
-    public static void getTeamInfo(String name, int size) {
-        System.out.println("The team " + name + " consists of " + size + " heroes:");
-        getTeam(size).forEach(Hero::print);
+        System.out.println("The " + name + " team has the following heroes: ");
+        team.forEach(Hero::print);
     }
 
 }
